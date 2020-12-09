@@ -7,29 +7,49 @@
 # mode.
 # To use, simply uncomment the following lines and run them once.
 # If you need to update your data delete the "ddcv_cache.rds" file and re-run
+suppressWarnings({
+  library(googlesheets4)
+  sheets_auth_configure(api_key = Sys.getenv("GGDRIVE_key"))
+  sheets_deauth()
+})
 
 library(tidyverse)
 source("CV_printing_functions.R")
 cv_data <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/14MQICF2F8-vf8CKPF1m4lyGKO6_thG-4aSwat1e2TWc",
+  data_location = "https://docs.google.com/spreadsheets/d/18FTiCfJXXyKS_z2uxjYc97_sQgrffIGiElScGWT9Qrg/edit?usp=sharing",
   cache_data = FALSE
 )
 
 readr::write_rds(cv_data, 'cached_positions.rds')
 cache_data <- TRUE
 
-# Knit the HTML version
-rmarkdown::render("cv.rmd",
-                  params = list(pdf_mode = FALSE, cache_data = cache_data),
-                  output_file = "index.html")
-
+# # Knit the HTML version
+# rmarkdown::render("cv.Rmd",
+#                   params = list(pdf_mode = FALSE, cache_data = cache_data),
+#                   output_file = "index.html")
+# 
 
 # Knit the PDF version to temporary html location
 tmp_html_cv_loc <- fs::file_temp(ext = ".html")
-rmarkdown::render("cv.rmd",
+rmarkdown::render("cv.Rmd",
                   params = list(pdf_mode = TRUE, cache_data = cache_data),
                   output_file = tmp_html_cv_loc)
 
 # Convert to PDF using Pagedown
+taroutput = paste0("TAR_CV_",lubridate::year(Sys.Date()),".pdf")
 pagedown::chrome_print(input = tmp_html_cv_loc,
-                       output = "strayer_cv.pdf")
+                       output = taroutput)
+
+
+#### SHORT
+# Knit the PDF version to temporary html location
+tmp_html_cv_loc <- fs::file_temp(ext = ".html")
+rmarkdown::render("resume.Rmd",
+                  params = list(pdf_mode = TRUE, cache_data = cache_data),
+                  output_file = tmp_html_cv_loc)
+
+# Convert to PDF using Pagedown
+taroutput = paste0("resume_TAR_CV_",lubridate::year(Sys.Date()),".pdf")
+pagedown::chrome_print(input = tmp_html_cv_loc,
+                       output = taroutput)
+

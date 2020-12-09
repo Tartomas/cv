@@ -1,6 +1,6 @@
 ---
-title: "Nick Strayer's CV"
-author: Nick Strayer
+title: "Tomás Acuña Ruz"
+author: Tomás Acuña Ruz
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 )
 
 library(magrittr) # For the pipe
-source("cv_printing_functions.r")
+source("CV_printing_functions.R")
 
 # Read in all data and initialize a CV printer object
 # CV <- create_CV_object(
@@ -52,16 +52,16 @@ Aside
 
 ```{r}
 # Build interactive network of positions colored by section
-# and connected if they occurred in the same year
-datadrivencv::build_network_logo(CV$entries_data)
+ # and connected if they occurred in the same year
+ # datadrivencv::build_network_logo(CV$entries_data)
 ```
 
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links at _nickstrayer.me/cv/_")
+  cat("View this CV online [tomasacunaruz/cv](https://tomasacunaruz.com/cv)")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF CV](https://github.com/tartomas/cv/raw/master/TAR_CV_2020.pdf)")
 }
 ```
 
@@ -86,18 +86,19 @@ CV %>% print_skill_bars()
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
-
-The source code is available [on github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+Contact References {data-icon=book}
+-------------------------------------------------------------------------------
+  - [Dr. Cristian Mattar](mailto:cmattar@uchile.cl).
+  - [Dr. Jaime Hernández](mailto:jhernand@uchile.cl).
+  - [Dra. María Paz Acuña](mailto:paz.acuna.ruz@gmail.com).
 
 Last updated on `r Sys.Date()`.
-
 
 
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Tomás Acuña Ruz {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -133,6 +134,8 @@ CV %<>% print_section('research_positions')
 
 
 <!-- These breaks just force a new page so section doesnt get cut off -->
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -179,12 +182,12 @@ CV %<>% print_section('about_me_press')
 <br>
 
 
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
+<!-- Selected Press (By)  {data-icon=newspaper} -->
+<!-- -------------------------------------------------------------------------------- -->
 
-```{r}
-CV %<>% print_section('by_me_press')
-```
+<!-- ```{r} -->
+<!-- CV %<>% print_section('by_me_press') -->
+<!-- ``` -->
 
 
 
@@ -200,4 +203,3 @@ CV %<>% print_section('academic_articles')
 ```{r}
 CV %<>% print_links()
 ```
-

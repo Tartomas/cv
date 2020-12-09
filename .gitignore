@@ -9,3 +9,6 @@ README.html
 cv.html
 
 ddcv_cache.rds
+cached_positions.rds
+.Renviron
+*.pdf
