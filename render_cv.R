@@ -9,8 +9,9 @@
 # If you need to update your data delete the "ddcv_cache.rds" file and re-run
 suppressWarnings({
   library(googlesheets4)
-  sheets_auth_configure(api_key = Sys.getenv("GGDRIVE_key"))
-  sheets_deauth()
+  googledrive::drive_auth_config(api_key = Sys.getenv("GGDRIVE_key"))
+  # sheets_auth_configure(api_key = Sys.getenv("GGDRIVE_key"))
+  # sheets_deauth()
 })
 
 library(tidyverse)
