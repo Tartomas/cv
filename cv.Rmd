@@ -90,7 +90,7 @@ Contact References {data-icon=book}
 -------------------------------------------------------------------------------
   - [Dr. Cristian Mattar](mailto:cmattar@uchile.cl).
   - [Dr. Jaime Hernández](mailto:jhernand@uchile.cl).
-  - [Dra. María Paz Acuña](mailto:paz.acuna.ruz@gmail.com).
+  - [Dr. Daniel Brieva](mailto:Physical.Marine.Research@gmail.com).
 
 Last updated on `r Sys.Date()`.
 
@@ -191,13 +191,18 @@ CV %<>% print_section('about_me_press')
 
 
 
-Selected Publications, Posters, and Talks {data-icon=book}
+Selected Publications {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
 CV %<>% print_section('academic_articles')
 ```
 
+Selected Lectures {data-icon=book}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('lectures')
+```
 
 
 ```{r}
