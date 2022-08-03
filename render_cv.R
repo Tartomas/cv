@@ -16,8 +16,9 @@ suppressWarnings({
 
 library(tidyverse)
 source("CV_printing_functions.R")
+sheet <- 'https://docs.google.com/spreadsheets/d/19cvVvku2dH3nnwa3cpJlr8hMnIod7VKaC5kohYa14Q4/edit?usp=sharing'
 cv_data <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/18FTiCfJXXyKS_z2uxjYc97_sQgrffIGiElScGWT9Qrg/edit?usp=sharing",
+  data_location = sheet,
   cache_data = FALSE
 )
 
