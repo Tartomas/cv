@@ -89,7 +89,8 @@ Disclaimer {#disclaimer}
 Contact References {data-icon=book}
 -------------------------------------------------------------------------------
   - [Dr. Cristian Mattar](mailto:cmattar@uchile.cl).
-  - [Dr. Jaime Hernández](mailto:jhernand@uchile.cl).
+  - [Dr. Vincent Echevin](mailto:vincent.echevin@locean.ipsl.fr).
+  - [Dr. Shungu Garaba](mailto:shungu.garaba@uni-oldenburg.de).
   - [Dr. Daniel Brieva](mailto:Physical.Marine.Research@gmail.com).
 
 Last updated on `r Sys.Date()`.

@@ -9,7 +9,7 @@
 # If you need to update your data delete the "ddcv_cache.rds" file and re-run
 suppressWarnings({
   library(googlesheets4)
-  googledrive::drive_auth_config(api_key = Sys.getenv("GGDRIVE_key"))
+  googledrive::drive_auth_configure(api_key = Sys.getenv("GGDRIVE_key"))
   # sheets_auth_configure(api_key = Sys.getenv("GGDRIVE_key"))
   # sheets_deauth()
 })
@@ -45,13 +45,15 @@ pagedown::chrome_print(input = tmp_html_cv_loc,
 
 #### SHORT
 # Knit the PDF version to temporary html location
-tmp_html_cv_loc <- fs::file_temp(ext = ".html")
+#tmp_html_cv_loc <- fs::file_temp(ext = ".html")
+
 rmarkdown::render("resume.Rmd",
                   params = list(pdf_mode = TRUE, cache_data = cache_data),
-                  output_file = tmp_html_cv_loc)
+                  output_file = 'resume.html')
+
 
 # Convert to PDF using Pagedown
 taroutput = paste0("resume_TAR_CV_",lubridate::year(Sys.Date()),".pdf")
-pagedown::chrome_print(input = tmp_html_cv_loc,
+pagedown::chrome_print(input = 'resume.html',
                        output = taroutput)
 

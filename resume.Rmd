@@ -54,7 +54,7 @@ Aside
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online [tomasacunaruz/cv](https://tomasacunaruz.com/cv)")
+  cat("View this CV online [tomasacunaruz/cv](https://docs.google.com/spreadsheets/d/19cvVvku2dH3nnwa3cpJlr8hMnIod7VKaC5kohYa14Q4/edit?usp=sharing)")
 } else {
   cat("[<i class='fas fa-download'></i> Download a PDF CV](https://github.com/tartomas/cv/raw/master/TAR_CV_2020.pdf)")
 }
@@ -85,7 +85,8 @@ Disclaimer {#disclaimer}
 Contact References {data-icon=book}
 -------------------------------------------------------------------------------
   - [Dr. Cristian Mattar](mailto:cmattar@uchile.cl).
-  - [Dr. Jaime Hernández](mailto:jhernand@uchile.cl).
+  - [Dr. Vincent Echevin](mailto:vincent.echevin@locean.ipsl.fr).
+  - [Dr. Shungu Garaba](mailto:shungu.garaba@uni-oldenburg.de).
   - [Dr. Daniel Brieva](mailto:Physical.Marine.Research@gmail.com).
   
 
